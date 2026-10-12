@@ -169,7 +169,7 @@
             transform: translateY(-3px);
         }
 
-        /* FRAME SMARTPHONE PARA VIDEO PROMOCIONAL */
+        /* SMARTPHONE MOCKUP */
         .hero-phone-container {
             flex: 1;
             display: flex;
@@ -180,10 +180,10 @@
 
         .phone-mockup {
             width: 280px;
-            height: 540px;
+            height: 520px;
             background: #111;
-            border: 12px solid #222;
-            border-radius: 40px;
+            border: 10px solid #222;
+            border-radius: 36px;
             box-shadow: 0 0 30px rgba(255, 230, 0, 0.25), 0 20px 40px rgba(0,0,0,0.8);
             position: relative;
             overflow: hidden;
@@ -195,8 +195,8 @@
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 120px;
-            height: 20px;
+            width: 110px;
+            height: 18px;
             background: #222;
             border-bottom-left-radius: 12px;
             border-bottom-right-radius: 12px;
@@ -258,7 +258,7 @@
             filter: drop-shadow(0 10px 25px rgba(255, 230, 0, 0.2));
         }
 
-        /* GALERÍA DE FOTOS (ADAPTACIÓN SIMÉTRICA DE IMÁGENES) */
+        /* GALERÍA DE FOTOS */
         .portfolio-tabs {
             display: flex;
             justify-content: center;
@@ -307,7 +307,7 @@
         .image-card img {
             width: 100%;
             height: 280px;
-            object-fit: cover; /* Adapta y llena la tarjeta simétricamente */
+            object-fit: cover;
             display: block;
         }
 
@@ -315,7 +315,7 @@
         .portfolio-content h3 { font-size: 1.05rem; margin-bottom: 4px; text-transform: capitalize; }
         .portfolio-content p { color: var(--text-gray); font-size: 0.82rem; }
 
-        /* SECCIÓN SEPARADA DE VIDEOS, 3D & REELS (FORMATOS INDEPENDIENTES) */
+        /* SECCIÓN DE VIDEOS */
         .video-section {
             background: #111;
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -337,6 +337,8 @@
             border: 2px solid rgba(255, 230, 0, 0.2);
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
             position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
         .video-card:hover {
@@ -345,45 +347,39 @@
             box-shadow: 0 10px 30px rgba(255, 230, 0, 0.25);
         }
 
-        /* FORMATO AUSTADO A LA PROPORCIÓN REAL DEL VIDEO */
-        /* Vertical 9:16 (Reels/TikTok) */
-        .video-card.format-vertical {
-            width: 280px;
-        }
-        .video-card.format-vertical video {
+        .video-wrapper {
             width: 100%;
-            height: 490px;
-            object-fit: cover;
+            background: #000;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
             display: block;
         }
 
-        /* Horizontal 16:9 (Renders/Cinematics) */
-        .video-card.format-horizontal {
-            width: 480px;
-            max-width: 100%;
-        }
-        .video-card.format-horizontal video {
-            width: 100%;
-            height: 270px;
-            object-fit: cover;
-            display: block;
-        }
+        /* PROPORCIONES EXACTAS CSS */
+        .video-card.ratio-16-9 { width: 440px; max-width: 100%; }
+        .video-card.ratio-16-9 .video-wrapper { aspect-ratio: 16 / 9; }
 
-        /* Cuadrado 1:1 (Feed Instagram) */
-        .video-card.format-square {
-            width: 320px;
-        }
-        .video-card.format-square video {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
+        .video-card.ratio-9-16 { width: 260px; max-width: 100%; }
+        .video-card.ratio-9-16 .video-wrapper { aspect-ratio: 9 / 16; }
+
+        .video-card.ratio-1-1 { width: 300px; max-width: 100%; }
+        .video-card.ratio-1-1 .video-wrapper { aspect-ratio: 1 / 1; }
+
+        .video-card.ratio-custom-1850 { width: 260px; max-width: 100%; }
+        .video-card.ratio-custom-1850 .video-wrapper { aspect-ratio: 1080 / 1850; }
 
         .video-badge-overlay {
             position: absolute;
-            top: 12px;
-            right: 12px;
+            top: 10px;
+            right: 10px;
             background: rgba(13, 13, 13, 0.85);
             color: var(--yellow);
             padding: 4px 10px;
@@ -392,12 +388,9 @@
             font-weight: 800;
             border: 1px solid var(--yellow);
             z-index: 5;
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
-        /* LIGHTBOX VISOR PANTALLA COMPLETA */
+        /* LIGHTBOX VISOR */
         .lightbox {
             position: fixed;
             top: 0;
@@ -451,7 +444,7 @@
         .service-list li { color: var(--text-gray); font-size: 0.88rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         .service-list li i { color: var(--yellow); font-size: 0.65rem; }
 
-        /* UBICACIÓN Y TIENDA FÍSICA */
+        /* UBICACIÓN Y FACHADA 100% ENTERA */
         .location-section {
             background: var(--black);
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -489,13 +482,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 260px;
+            padding: 10px;
         }
 
         .location-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: contain; /* Fachada completa sin cortes */
             display: block;
         }
 
@@ -618,7 +612,7 @@
         </div>
     </section>
 
-    <!-- 1. GALERÍA DE IMÁGENES (FOTOS DE TRABAJOS REALES) -->
+    <!-- 1. GALERÍA DE IMÁGENES -->
     <section id="galeria-fotos">
         <div class="section-title">
             <h2>Galería de <span>Trabajos & Proyectos</span></h2>
@@ -637,11 +631,11 @@
         <div class="image-portfolio-grid" id="dynamic-image-portfolio"></div>
     </section>
 
-    <!-- 2. SECCIÓN INDEPENDIENTE: PRODUCCIÓN AUDIOVISUAL, 3D & REELS (.MP4) -->
+    <!-- 2. SECCIÓN DE VIDEOS (.MP4) CON SUS RESOLUCIONES REALES Y GUIONES NORMALES -->
     <section id="videos-reels" class="video-section">
         <div class="section-title">
             <h2>Producción <span>3D, Videos & Reels</span></h2>
-            <p>Animaciones tridimensionales, motion graphics y contenido dinámico adaptado a su formato original.</p>
+            <p>Animaciones tridimensionales y piezas audiovisuales respetando su proporción original.</p>
         </div>
 
         <div class="video-masonry-grid" id="dynamic-video-portfolio"></div>
@@ -706,7 +700,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN EXACTA Y TIENDA FÍSICA -->
+    <!-- UBICACIÓN EXACTA Y FACHADA 100% ENTERA -->
     <section id="ubicacion" class="location-section">
         <div class="location-container">
             <div class="location-info">
@@ -762,9 +756,9 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPT DE GENERACIÓN Y FILTRADO -->
+    <!-- SCRIPT DE CONFIGURACIÓN -->
     <script>
-        // 1. CONFIGURACIÓN DE FOTOS (.PNG)
+        // FOTOS (.PNG)
         const imageFiles = [
             ...Array.from({length: 26}, (_, i) => ({ name: `evento-anime-${String(i + 1).padStart(2, '0')}.png`, category: 'anime', title: `Evento Anime #${i + 1}` })),
             ...Array.from({length: 10}, (_, i) => ({ name: `trabajo-impresion-${String(i + 1).padStart(2, '0')}.png`, category: 'impresion', title: `Impresión Publicitaria #${i + 1}` })),
@@ -773,22 +767,33 @@
             ...Array.from({length: 5}, (_, i) => ({ name: `trabajo-branding-${String(i + 1).padStart(2, '0')}.png`, category: 'branding', title: `Diseño & Branding #${i + 1}` }))
         ];
 
-        // 2. CONFIGURACIÓN DE VIDEOS CON FORMATO ESPECÍFICO (.MP4)
+        // LISTA DE VIDEOS CON SUS RELACIONES DE ASPECTO EXACTAS
         const videoFiles = [
-            // TRABAJOS ANIMADOS / 3D
-            ...Array.from({length: 17}, (_, i) => ({
-                name: `trabajo-animado-${String(i + 1).padStart(2, '0')}.mp4`,
-                title: `Render / Animación 3D #${i + 1}`,
-                // Ajustamos el formato visual según la orientación deseada
-                formatClass: (i % 2 === 0) ? 'format-horizontal' : 'format-vertical'
-            })),
-            // REELS / VIDEOS PROMOCIONALES
-            { name: 'video-reel-04.mp4', title: 'Video Reel / Motion Graphics', formatClass: 'format-vertical' },
-            { name: 'video-reel-05.mp4', title: 'Producción Audiovisual 16:9', formatClass: 'format-horizontal' },
-            { name: 'video-reel-06.mp4', title: 'Contenido Dinámico Cuadrado', formatClass: 'format-square' }
+            { name: 'trabajo-animado-01.mp4', title: 'Render 3D #01 (1080x1080)', ratioClass: 'ratio-1-1' },
+            { name: 'trabajo-animado-02.mp4', title: 'Render 3D #02 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-03.mp4', title: 'Render 3D #03 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-04.mp4', title: 'Render 3D #04 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-05.mp4', title: 'Render 3D #05 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-06.mp4', title: 'Render 3D 2K #06 (2560x1440)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-07.mp4', title: 'Animación Vertical #07 (1080x1920)', ratioClass: 'ratio-9-16' },
+            { name: 'trabajo-animado-08.mp4', title: 'Render 3D #08 (2160x2160)', ratioClass: 'ratio-1-1' },
+            { name: 'trabajo-animado-09.mp4', title: 'Render 3D #09 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-10.mp4', title: 'Animación Vertical #10 (1080x1920)', ratioClass: 'ratio-9-16' },
+            { name: 'trabajo-animado-11.mp4', title: 'Render 3D #11 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-12.mp4', title: 'Render 3D #12 (1080x1080)', ratioClass: 'ratio-1-1' },
+            { name: 'trabajo-animado-13.mp4', title: 'Animación Vertical #13 (1088x1920)', ratioClass: 'ratio-9-16' },
+            { name: 'trabajo-animado-14.mp4', title: 'Render HD #14 (1280x720)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-15.mp4', title: 'Render 3D #15 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-16.mp4', title: 'Render 3D #16 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'trabajo-animado-17.mp4', title: 'Animación Móvil #17 (1080x1850)', ratioClass: 'ratio-custom-1850' },
+            
+            // REELS CON GUIONES NORMALES Y RESOLUCIÓN 1920x1080
+            { name: 'video-reel-04.mp4', title: 'Video Reel #04 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'video-reel-05.mp4', title: 'Video Reel #05 (1920x1080)', ratioClass: 'ratio-16-9' },
+            { name: 'video-reel-06.mp4', title: 'Video Reel #06 (1920x1080)', ratioClass: 'ratio-16-9' }
         ];
 
-        // RENDERIZAR GALERÍA DE IMÁGENES
+        // RENDERIZAR FOTOS
         const imageGrid = document.getElementById('dynamic-image-portfolio');
         function renderImagePortfolio() {
             imageGrid.innerHTML = '';
@@ -808,19 +813,21 @@
             });
         }
 
-        // RENDERIZAR SECCIÓN DE VIDEOS (.MP4)
+        // RENDERIZAR VIDEOS
         const videoGrid = document.getElementById('dynamic-video-portfolio');
         function renderVideoPortfolio() {
             videoGrid.innerHTML = '';
             videoFiles.forEach(file => {
                 const card = document.createElement('div');
-                card.className = `video-card ${file.formatClass}`;
+                card.className = `video-card ${file.ratioClass}`;
 
                 card.innerHTML = `
                     <span class="video-badge-overlay"><i class="fa-solid fa-play"></i> VIDEO HD</span>
-                    <video controls muted preload="metadata" onclick="openLightbox('assets/${file.name}', 'video')" onerror="this.parentElement.style.display='none'">
-                        <source src="assets/${file.name}" type="video/mp4">
-                    </video>
+                    <div class="video-wrapper">
+                        <video controls muted preload="metadata" onclick="openLightbox('assets/${file.name}', 'video')" onerror="this.parentElement.parentElement.style.display='none'">
+                            <source src="assets/${file.name}" type="video/mp4">
+                        </video>
+                    </div>
                     <div class="portfolio-content">
                         <h3>${file.title}</h3>
                         <p>Buena Vibra Studio</p>
@@ -848,7 +855,7 @@
             });
         }
 
-        // LIGHTBOX
+        // LIGHTBOX VISOR
         function openLightbox(src, type) {
             const lightbox = document.getElementById('lightbox');
             const container = document.getElementById('lightbox-media-container');

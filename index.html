@@ -315,7 +315,7 @@
         .portfolio-content h3 { font-size: 1.05rem; margin-bottom: 4px; text-transform: capitalize; }
         .portfolio-content p { color: var(--text-gray); font-size: 0.82rem; }
 
-        /* SECCIÓN DE VIDEOS REORDENADA POR RELACIÓN DE ASPECTO */
+        /* SECCIÓN DE VIDEOS */
         .video-section {
             background: #111;
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -444,7 +444,7 @@
         .service-list li { color: var(--text-gray); font-size: 0.88rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         .service-list li i { color: var(--yellow); font-size: 0.65rem; }
 
-        /* UBICACIÓN & FACHADA REDISEÑADA SIN CUADROS NEGROS NI BORDES RÍGIDOS */
+        /* UBICACIÓN & FACHADA REDISEÑADA */
         .location-section {
             background: var(--black);
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -474,7 +474,6 @@
             gap: 20px;
         }
 
-        /* FACHADA LIMPIA Y ORGANIZADA */
         .fachada-clean-wrapper {
             width: 100%;
             border-radius: 14px;
@@ -628,7 +627,7 @@
         <div class="image-portfolio-grid" id="dynamic-image-portfolio"></div>
     </section>
 
-    <!-- 2. SECCIÓN DE VIDEOS REORDENADOS POR PROPORCIÓN Y REELS PRIMERO -->
+    <!-- 2. SECCIÓN DE VIDEOS -->
     <section id="videos-reels" class="video-section">
         <div class="section-title">
             <h2>Producción <span>3D, Videos & Reels</span></h2>
@@ -697,7 +696,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN Y FACHADA MEJORADA (SIN CUADROS NEGROS NI RELLENOS RAROS) -->
+    <!-- UBICACIÓN Y FACHADA -->
     <section id="ubicacion" class="location-section">
         <div class="location-container">
             <div class="location-info">
@@ -753,25 +752,25 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPT DE ORDENAMIENTO POR PROPORCIÓN Y REELS DE PRIMERO -->
+    <!-- SCRIPT CONFIGURADO HASTA EVENTO-ANIME-37 -->
     <script>
-        // FOTOS (.PNG)
+        // FOTOS (.PNG) ACTUALIZADAS HASTA EVENTO-ANIME-37
         const imageFiles = [
-            ...Array.from({length: 26}, (_, i) => ({ name: `evento-anime-${String(i + 1).padStart(2, '0')}.png`, category: 'anime', title: `Evento Anime #${i + 1}` })),
+            ...Array.from({length: 37}, (_, i) => ({ name: `evento-anime-${String(i + 1).padStart(2, '0')}.png`, category: 'anime', title: `Evento Anime #${i + 1}` })),
             ...Array.from({length: 10}, (_, i) => ({ name: `trabajo-impresion-${String(i + 1).padStart(2, '0')}.png`, category: 'impresion', title: `Impresión Publicitaria #${i + 1}` })),
             ...Array.from({length: 13}, (_, i) => ({ name: `trabajo-rotulado-${String(i + 1).padStart(2, '0')}.png`, category: 'rotulado', title: `Rotulado Comercial #${i + 1}` })),
             ...Array.from({length: 6}, (_, i) => ({ name: `trabajo-sublimado-${String(i + 1).padStart(2, '0')}.png`, category: 'sublimado', title: `Sublimación & DTF #${i + 1}` })),
             ...Array.from({length: 5}, (_, i) => ({ name: `trabajo-branding-${String(i + 1).padStart(2, '0')}.png`, category: 'branding', title: `Diseño & Branding #${i + 1}` }))
         ];
 
-        // REORDENAMIENTO ESTRATÉGICO DE VIDEOS (REELS PRIMERO, LUEGO 16:9, LUEGO 1:1, LUEGO VERTICALES)
+        // VIDEOS
         const videoFiles = [
-            // 1. REELS DE PRIMERO
+            // REELS DE PRIMERO
             { name: 'video-reel-04.mp4', title: 'Video Reel #04 (1920x1080)', ratioClass: 'ratio-16-9' },
             { name: 'video-reel-05.mp4', title: 'Video Reel #05 (1920x1080)', ratioClass: 'ratio-16-9' },
             { name: 'video-reel-06.mp4', title: 'Video Reel #06 (1920x1080)', ratioClass: 'ratio-16-9' },
 
-            // 2. VIDEOS HORIZONTALES (16:9)
+            // HORIZONTALES
             { name: 'trabajo-animado-02.mp4', title: 'Render 3D #02 (1920x1080)', ratioClass: 'ratio-16-9' },
             { name: 'trabajo-animado-03.mp4', title: 'Render 3D #03 (1920x1080)', ratioClass: 'ratio-16-9' },
             { name: 'trabajo-animado-04.mp4', title: 'Render 3D #04 (1920x1080)', ratioClass: 'ratio-16-9' },
@@ -783,12 +782,12 @@
             { name: 'trabajo-animado-15.mp4', title: 'Render 3D #15 (1920x1080)', ratioClass: 'ratio-16-9' },
             { name: 'trabajo-animado-16.mp4', title: 'Render 3D #16 (1920x1080)', ratioClass: 'ratio-16-9' },
 
-            // 3. VIDEOS CUADRADOS (1:1)
+            // CUADRADOS
             { name: 'trabajo-animado-01.mp4', title: 'Render 3D #01 (1080x1080)', ratioClass: 'ratio-1-1' },
             { name: 'trabajo-animado-08.mp4', title: 'Render 3D #08 (2160x2160)', ratioClass: 'ratio-1-1' },
             { name: 'trabajo-animado-12.mp4', title: 'Render 3D #12 (1080x1080)', ratioClass: 'ratio-1-1' },
 
-            // 4. VIDEOS VERTICALES (9:16 y MÓVIL)
+            // VERTICALES
             { name: 'trabajo-animado-07.mp4', title: 'Animación Vertical #07 (1080x1920)', ratioClass: 'ratio-9-16' },
             { name: 'trabajo-animado-10.mp4', title: 'Animación Vertical #10 (1080x1920)', ratioClass: 'ratio-9-16' },
             { name: 'trabajo-animado-13.mp4', title: 'Animación Vertical #13 (1088x1920)', ratioClass: 'ratio-9-16' },

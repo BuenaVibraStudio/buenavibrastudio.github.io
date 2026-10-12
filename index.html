@@ -315,7 +315,7 @@
         .portfolio-content h3 { font-size: 1.05rem; margin-bottom: 4px; text-transform: capitalize; }
         .portfolio-content p { color: var(--text-gray); font-size: 0.82rem; }
 
-        /* SECCIÓN DE VIDEOS Y BOTÓN DESPLEGABLE */
+        /* SECCIÓN DE VIDEOS */
         .video-section {
             background: #111;
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -449,7 +449,7 @@
         .service-list li { color: var(--text-gray); font-size: 0.88rem; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         .service-list li i { color: var(--yellow); font-size: 0.65rem; }
 
-        /* UBICACIÓN & FACHADA */
+        /* UBICACIÓN & FACHADA CON MAPA DE GOOGLE OFICIAL */
         .location-section {
             background: var(--black);
             border-top: 1px solid rgba(255, 230, 0, 0.1);
@@ -497,13 +497,14 @@
         .map-responsive {
             border-radius: 14px;
             overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.15);
-            height: 220px;
+            border: 2px solid var(--yellow);
+            height: 250px;
+            box-shadow: 0 8px 25px rgba(255, 230, 0, 0.2);
         }
 
         .map-responsive iframe { width: 100%; height: 100%; border: 0; }
 
-        /* FOOTER CON BALANCE DE 3 ICONOS PERFECTAMENTE CENTRADOS */
+        /* FOOTER CON 3 ICONOS CENTRADOS */
         footer {
             background: #080808;
             padding: 50px 5% 25px;
@@ -636,7 +637,7 @@
         </div>
     </section>
 
-    <!-- 1. GALERÍA DE IMÁGENES (ALEATORIA EN "TODOS" - MÁX 16 FOTOS) -->
+    <!-- 1. GALERÍA DE IMÁGENES -->
     <section id="galeria-fotos">
         <div class="section-title">
             <h2>Galería de <span>Trabajos & Proyectos</span></h2>
@@ -655,7 +656,7 @@
         <div class="image-portfolio-grid" id="dynamic-image-portfolio"></div>
     </section>
 
-    <!-- 2. SECCIÓN DE VIDEOS DINÁMICA (9 INICIALES + BOTÓN DESPLEGABLE) -->
+    <!-- 2. SECCIÓN DE VIDEOS DINÁMICA -->
     <section id="videos-reels" class="video-section">
         <div class="section-title">
             <h2>Producción <span>3D, Videos & Reels</span></h2>
@@ -730,7 +731,7 @@
         </div>
     </section>
 
-    <!-- UBICACIÓN Y FACHADA -->
+    <!-- UBICACIÓN Y FACHADA CON EL MAPA EXACTO DE GOOGLE MAPS DE BUENA VIBRA STUDIO -->
     <section id="ubicacion" class="location-section">
         <div class="location-container">
             <div class="location-info">
@@ -738,7 +739,7 @@
                 <p><i class="fa-solid fa-location-dot" style="color: var(--yellow);"></i> <strong>Dirección:</strong> Urbanización Surupey, Calle 2, Casa 3, Santa Cruz de Aragua, Edo. Aragua, Venezuela.</p>
                 <p><i class="fa-solid fa-clock" style="color: var(--yellow);"></i> <strong>Horario de Atención:</strong> Lunes a Sábado de 8:00 AM a 6:00 PM.</p>
                 <p>Ven a conocer de cerca nuestras muestras de sublimación, cuadros PVC, impresiones en gran formato y consulta tus proyectos directamente con nuestro equipo.</p>
-                <a href="https://maps.google.com/?q=Santa+Cruz+de+Aragua+Venezuela" target="_blank" class="btn btn-primary" style="margin-top: 15px;">
+                <a href="https://maps.google.com/?q=Buena+Vibra+Studio+Santa+Cruz+de+Aragua" target="_blank" class="btn btn-primary" style="margin-top: 15px;">
                     <i class="fa-solid fa-map-location-dot"></i> Abrir Dirección en Google Maps
                 </a>
             </div>
@@ -748,13 +749,13 @@
                     <img src="assets/fachada.png" alt="Fachada Buena Vibra Studio" onerror="this.src='assets/fachada.jpg'; this.onerror=function(){this.src='https://via.placeholder.com/500x250/161616/ffe600?text=Fachada+Buena+Vibra+Studio'}">
                 </div>
                 <div class="map-responsive">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.280145228511!2d-67.5188!3d10.1833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e8020ff36a6e5db%3A0x8e3b5e40cf1d32a0!2sSanta%20Cruz%20de%20Aragua%2C%20Aragua!5e0!3m2!1ses!2sve!4v1680000000000!5m2!1ses!2sve" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.0373827492085!2d-67.52101735458854!3d10.177616864069678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e802315c24bfb97%3A0xbe6090f89755244d!2sBuena%20Vibra%20Studio!5e0!3m2!1ses-419!2sve!4v1791772810657!5m2!1ses-419!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER CON 3 ICONOS Y DATOS BALANCEADOS Y CENTRADOS -->
+    <!-- FOOTER CON 3 ICONOS CENTRADOS -->
     <footer id="contacto">
         <div class="section-title">
             <h2>Ponte en <span>Contacto</span></h2>
@@ -787,9 +788,9 @@
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPT DE GALERÍA ALEATORIA, ROTULADO HASTA 17 Y VIDEOS PAGINADOS -->
+    <!-- SCRIPT DE NAVEGACIÓN Y MULTIMEDIA -->
     <script>
-        // 1. CONJUNTO COMPLETO DE FOTOS
+        // FOTOS
         const allImageFiles = [
             ...Array.from({length: 37}, (_, i) => ({ name: `evento-anime-${String(i + 1).padStart(2, '0')}.png`, category: 'anime', title: `Evento Anime #${i + 1}` })),
             ...Array.from({length: 10}, (_, i) => ({ name: `trabajo-impresion-${String(i + 1).padStart(2, '0')}.png`, category: 'impresion', title: `Impresión Publicitaria #${i + 1}` })),
@@ -798,7 +799,7 @@
             ...Array.from({length: 5}, (_, i) => ({ name: `trabajo-branding-${String(i + 1).padStart(2, '0')}.png`, category: 'branding', title: `Diseño & Branding #${i + 1}` }))
         ];
 
-        // 2. CONJUNTO DE VIDEOS
+        // VIDEOS
         const allVideoFiles = [
             // REELS DE PRIMERO
             { name: 'video-reel-04.mp4', title: 'Video Reel #04 (1920x1080)', ratioClass: 'ratio-16-9' },
@@ -831,18 +832,16 @@
 
         let showAllVideos = false;
 
-        // RENDERIZAR FOTOS (CON LÍMITE ALEATORIO DE 16 EN "TODOS")
+        // RENDERIZAR FOTOS
         const imageGrid = document.getElementById('dynamic-image-portfolio');
         function renderImagePortfolio(filter = 'all') {
             imageGrid.innerHTML = '';
             let filesToRender = [...allImageFiles];
 
             if (filter === 'all') {
-                // Mezclar aleatoriamente y tomar solo las primeras 16 para vista compacta
                 filesToRender.sort(() => Math.random() - 0.5);
                 filesToRender = filesToRender.slice(0, 16);
             } else {
-                // Filtrar por categoría específica y mostrar todas ordenadas de forma aleatoria para que se vea fresco
                 filesToRender = filesToRender.filter(file => file.category === filter);
                 filesToRender.sort(() => Math.random() - 0.5);
             }
@@ -861,7 +860,7 @@
             });
         }
 
-        // RENDERIZAR VIDEOS (9 INICIALES + BOTÓN DESPLEGABLE)
+        // RENDERIZAR VIDEOS
         const videoGrid = document.getElementById('dynamic-video-portfolio');
         function renderVideoPortfolio() {
             videoGrid.innerHTML = '';
